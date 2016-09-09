@@ -12,13 +12,6 @@ RSpec.describe Make, :type => :model do
       end
     end
 
-    # context 'when the maker already exists in the database' do
-    #   it "updates the existing record" do
-    #     maker.save
-    #     expect{Make.where(name: maker.name).update_or_create(name: maker.name, webmotors_id: maker.webmotors_id)}.to_not change(Make,:count)
-    #   end
-    # end
-
     context "Test to persist a new Make" do
       it "Is a Make saved?" do
         # expect{Make.where(name: "test-make-2").update_or_create(name: "test-make-2", webmotors_id: 3)}.to change(Make,:count).by(1)
@@ -28,4 +21,14 @@ RSpec.describe Make, :type => :model do
         expect(make.save).to be_truthy
       end
     end
+
+    context 'Test create a new make in the database' do
+      it "Can Model be persist?" do
+        expect{
+          Make.where(name: "bmw-maker")
+          .create(name: "bmw-maker", webmotors_id: 1000)}
+          .to change(Make,:count).by(1)
+      end
+    end
+
 end

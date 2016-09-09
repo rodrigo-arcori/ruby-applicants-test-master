@@ -35,6 +35,10 @@ group :development, :test do
 
   # Rspec-rails is a testing framework for Rails
   gem 'rspec-rails'
+
+  # factory_girl is a fixtures replacement with a straightforward definition syntax
+  gem 'factory_girl_rails'
+  
 end
 
 group :development do
