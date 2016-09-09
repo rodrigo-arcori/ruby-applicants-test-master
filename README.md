@@ -3,7 +3,7 @@
 ## Redis
   1. redis-server
 
-## ENV
+## Var ENV
   1. export MODEL_URI=http://www.webmotors.com.br/carro/modelos
 
 ## Bundle
@@ -18,3 +18,6 @@
 ## Rake
   1. rake webmotors:loadMake
   2. rake webmotors:loadModel
+
+## ROR
+  1. rails s
