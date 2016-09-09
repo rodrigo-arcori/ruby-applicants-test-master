@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      Model: "Modelo"
+    attributes:
+      customer:
+        id: "Identificador"
+        name: "Nome"
+      # will translate User attribute "login" as "Handle"

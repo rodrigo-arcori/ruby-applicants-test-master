@@ -1,14 +1,15 @@
-<% makes = Make.all %>
-
-<form action="/models" method="GET">
-  <p>
-    <label>Escolha a Fabricante:</label>
-    <select name="webmotors_make_id">
-      <% makes.each do |make| %>
-        <option value="<%= make.webmotors_id %>"><%= make.name %></option>
-      <% end %>
-    </select>
-  </p>
-
-  <input type="submit" value="Buscar modelos">
-</form>
+<div class="col-xs-9">
+  <div class="row text-center">
+    <%= form_tag models_path, method: :get do %>
+      <div class="row">
+        <p class="col-xs-4 col-xs-offset-4">
+          <%= label_tag t("select_make") %>
+          <%= select_tag "make[id]", options_from_collection_for_select(@makers, "id", "name"), class: "form-control" %>
+        </p>
+      </div>
+      <div class="row">
+        <%= submit_tag t("submit_model"), class: "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
+</div>
