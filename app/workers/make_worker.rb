@@ -18,7 +18,7 @@ class MakeWorker
     # Itera no resultado e grava as marcas que ainda não estão persistidas
     json.each do |make_params|
 
-      if Make.where(name: make_params["Nome"]).size == 0
+      if Make.find_name(make_params["Nome"]).size == 0
         Make.create(name: make_params["Nome"], webmotors_id: make_params["Id"])
       end
 
